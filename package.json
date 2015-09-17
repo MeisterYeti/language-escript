@@ -1,0 +1,14 @@
+{
+  "name": "language-escript",
+  "version": "0.0.0",
+  "description": "Atom language support for EScript",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MeisterYeti/language-escript.git"
+  },
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "license": "MIT"
+}
