@@ -4,6 +4,10 @@ All notable changes to the "language-escript" extension will be documented in th
 
 ## [Unreleased]
 
+## [0.1.2] - 2020-01-25
+### Added
+- Added missing keywords
+
 ## [0.1.1] - 2020-01-25
 ### Added
 - Syntax highlighting for VSCode

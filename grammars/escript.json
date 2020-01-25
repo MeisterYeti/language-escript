@@ -9,8 +9,16 @@
 	"foldingStopMarker": "\\*\\*/|^\\s*\\}",
 	"patterns": [
 		{
-			"match": "\\b(if|else|for|while|do|switch|break|continue|case|default|foreach|return|try|catch|throw)\\b",
+			"match": "\\b(as|break|case|catch|continue|default|do|else|exit|for|foreach|if|return|switch|throw|try|while|yield)\\b",
 			"name": "keyword.control.escript"
+		},
+		{
+			"match": "\\b((0(x|X)[0-9a-fA-F]+)|(0(b|B)[01]+)|(0(o|O)[0-7]+)|([0-9]+(\\.[0-9]+)?)((e|E)[+-]?[0-9]+)?)\\b",
+			"name": "constant.numeric.escript"
+		},
+		{
+			"match": "\\b(true|false|null|void)\\b",
+			"name": "constant.language.escript"
 		},
 		{
 			"match": "\\b(var|static)\\b",
@@ -21,39 +29,12 @@
 			"name": "storage.function.escript"
 		},
 		{
-			"match": "\\b((0(x|X)[0-9a-fA-F]+)|(0(b|B)[01]+)|(0(o|O)[0-7]+)|([0-9]+(\\.[0-9]+)?)((e|E)[+-]?[0-9]+)?)\\b",
-			"name": "constant.numeric.escript"
-		},
-		{
-			"include": "#strings"
-		},
-		{
-			"include": "#comments"
-		},
-		{
-			"begin": "(^[ \\t]+)?(?=//)",
-			"beginCaptures": {
-				"1": {
-					"name": "punctuation.whitespace.comment.leading.escript"
-				}
-			},
-			"end": "(?!\\G)",
-			"patterns": [
-				{
-					"begin": "//",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.comment.escript"
-						}
-					},
-					"end": "\\n",
-					"name": "comment.line.double-slash.escript"
-				}
-			]
-		},
-		{
-			"match": "@\\(\\s*\\b(const|init|override|private|type)\\b(\\s*,\\s*\\b(const|init|override|private|type)\\b)*\\s*\\)",
+			"match": "@\\(\\s*\\b(const|init|member|override|private|public|type|super|once)\\b(\\s*,\\s*\\b(const|init|member|override|private|public|type|super|once)\\b)*\\s*\\)",
 			"name": "storage.modifier.escript"
+		},
+		{
+			"match": "\\b(this|thisFn)\\b",
+			"name": "variable.language.escript"
 		},
 		{
 			"captures": {
@@ -68,12 +49,26 @@
 			"name": "meta.class.instance.constructor"
 		},
 		{
-			"match": "\\b(out|outln|print_r|assert|chr|clock|getDate|getOS|getRuntime|load|loadOnce|parse|parseJSON|system|time|toJSON|eval)\\b",
+			"match": "\\b(out|outln|print_r|assert|chr|clock|getDate|getOS|getRuntime|load|loadOnce|parse|parseJSON|system|time|toJSON|eval|addSearchPath|exec)\\b",
 			"name": "support.function.escript"
 		},
 		{
 			"match": "\\b(Object|ExtObject|Type|Array|Map|Delegate|Function|Collection|Iterator|NumberRef|ReferenceObject|Exception)\\b",
 			"name": "support.class.escript"
+		},
+		{
+			"match": "\\b(GLOBALS|SGLOBALS|args|EScript|Runtime|Std|Win32|IO|Math)\\b",
+			"name": "support.variable.escript"
+		},
+		{
+			"match": "\\b(__DIR__|__LINE__)\\b",
+			"name": "support.constant.escript"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
 		}
 	],
 	"repository": {
@@ -144,6 +139,27 @@
 					},
 					"end": "\\*/",
 					"name": "comment.block.escript"
+				},
+				{
+					"begin": "(^[ \\t]+)?(?=//)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.whitespace.comment.leading.escript"
+						}
+					},
+					"end": "(?!\\G)",
+					"patterns": [
+						{
+							"begin": "//",
+							"beginCaptures": {
+								"0": {
+									"name": "punctuation.definition.comment.escript"
+								}
+							},
+							"end": "\\n",
+							"name": "comment.line.double-slash.escript"
+						}
+					]
 				}
 			]
 		}

@@ -1,7 +1,7 @@
 {
     "name": "language-escript",
     "displayName": "EScript Language",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "publisher": "meisteryeti",
     "description": "Language support for the EScript scripting language.",
     "repository": {
