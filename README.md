@@ -1,3 +1,3 @@
-# language-escript package
+# language-escript README
 
-Adds syntax highlighting and snippets to [EScript](https://github.com/EScript/EScript) files in Atom.
+Language support for the [EScript](https://github.com/EScript/EScript) scripting language

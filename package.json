@@ -1,14 +1,33 @@
 {
-  "name": "language-escript",
-  "version": "0.1.0",
-  "description": "Atom language support for EScript",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MeisterYeti/language-escript.git"
-  },
-  "engines": {
-    "atom": "*",
-    "node": "*"
-  },
-  "license": "MIT"
+    "name": "language-escript",
+    "displayName": "EScript Language",
+    "version": "0.1.1",
+    "publisher": "meisteryeti",
+    "description": "Language support for the EScript scripting language.",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/MeisterYeti/language-escript.git"
+    },
+    "engines": {
+        "vscode": "^1.41.0",
+        "atom": "*",
+        "node": "*"
+    },
+    "license": "MIT",
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "escript",
+            "aliases": ["EScript", "escript"],
+            "extensions": [".escript"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "escript",
+            "scopeName": "source.escript",
+            "path": "./grammars/escript.json"
+        }]
+    }
 }
